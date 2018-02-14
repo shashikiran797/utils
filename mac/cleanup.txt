@@ -1,0 +1,6 @@
+Delete all folders from the below folders
+cd ~/Library/Developer/CoreSimulator/Devices
+cd ~/Library/Developer/Xcode/DerivedData/
+cd ~/Library/Developer/Xcode/Archives
+cd "~/Library/Application Support/MobileSync/Backup"
+cd ~/Library/Caches

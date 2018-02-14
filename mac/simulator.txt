@@ -1,0 +1,12 @@
+cd ~/Library/Developer/Xcode/Archives
+cd into latest date
+cd into .xcarchive
+cd Applications
+Copy .app folder to Downloads or Documents
+Zip and send it through airdrop
+
+After unzipping the target machine, use command
+
+xcrun simctl install booted Votercircle.app
+
+To install it into simulator
