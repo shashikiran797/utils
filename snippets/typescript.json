@@ -1,0 +1,219 @@
+{
+	/*
+	// Place your snippets for TypeScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	"Junk print to console": {
+		"prefix": "ctl", // console.log('================='')
+		"body": [
+			"console.log('=================================');"
+		],
+		"description": "Log output to console"
+	},
+	"String print to console": {
+		"prefix": "csl", // console.log('=================== $1 ==============');$0"
+		"body": [
+			"console.log('=================== $1 ==============');$0"
+		],
+		"description": "Log output to console"
+	},
+	"Json stringify": {
+		"prefix": "jsify", // "JSON stringify"
+		"body": [
+			"JSON.stringify($1)"
+		],
+		"description": "JSON stringify"
+	},
+	"Log with json stringify": {
+		"prefix": "cjs", // "Log output to console"
+		"body": [
+			"console.log(JSON.stringify($0, null, 2));"
+		],
+		"description": "Log output to console"
+	},
+	"Print to console": {
+		"prefix": "clog", // "console.log('$0');"
+		"body": [
+			"console.log('$0');"
+		],
+		"description": "Log output to console"
+	},
+	"Meteor observable": {
+		"prefix": "mobs", // "Meteor Observable"
+		"body": [
+			"MeteorObservable.call('$1', { })",
+			"\t.subscribe((response: Object) => {",
+			"\t\t$2",
+			"\t}, err => { ${3:console.log(err);} });"
+		],
+		"description": "Meteor Observable"
+	},
+	"Import Meteor observable": {
+		"prefix": "imobs", // "Import Meteor Observable"
+		"body": [
+			"import { MeteorObservable } from '@votercircle/meteor-rxjs';"
+		],
+		"description": "Import Meteor Observable"
+	},
+	"Import rxjs subscription": {
+		"prefix": "irs",
+		"body": [
+			"import { Subscription } from 'rxjs/Subscription';"
+		]
+	},
+	"Import Generic": {
+		"prefix": "ifrom", // "Import Generic"
+		"body": [
+			"import { $0 } from '$1';"
+		],
+		"description": "Import Generic"
+	},
+	"For Loop": {
+		"prefix": "forloop", // "For Loop"
+		"body": [
+			"for (var ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+			"\tvar ${3:element} = ${2:array}[${1:index}];",
+			"\t$0",
+			"}"
+		],
+		"description": "For Loop"
+	},
+	"Export method": {
+		"prefix": "emet",
+		"body": [
+			"export const ${1:method} = function() {\n\t$2\n};"
+		],
+		"description": "Export method"
+	},
+	"Function": {
+		"prefix": "fnc", //"Just a method"
+		"body": [
+			"${1:method}($3) {\n\t$2\n}"
+		],
+		"description": "Just a method"
+	},
+	"Export variable": {
+		"prefix": "evar", // "Export variable"
+		"body": [
+			"export const ${1:name} = ${2:value};"
+		],
+		"description": "Export variable"
+	},
+	"Materialize toast": {
+		"prefix": "mto", // Materialize toast
+		"body": [
+			"Materialize.toast('${2:Updated successfully}', ${1:3000});"
+		]
+	},
+	"onde": {
+		"prefix": "onde",
+		"body": [
+			"subscriptions: Array<Subscription> = []",
+			"ngOnDestroy(): void {",
+			"\tif (this.subscriptions.length > 0) {",
+			"\t\t_.each(this.subscriptions, sub => {",
+			"\t\t\tsub.unsubscribe();",
+			"\t\t})",
+			"\t}",
+			"}"
+		]
+	},
+	"onin": {
+		"prefix": "onin",
+		"body": [
+			"ngOnInit(): void {",
+			"\t$1",
+			"}"
+		]
+	},
+	"tng": {
+		"prefix": "tng",
+		"body": [
+			"this.navParams.get('${1:param}')"
+		]
+	},
+	"tsp": {
+		"prefix": "tsp",
+		"body": [
+			"this.subscriptions.push(${1:sub});"
+		]
+	},
+	"sel": {
+		"prefix": "sel",
+		"body": [
+			"const ${4:type}Sub = this.store.select(${1:selector}).subscribe(${2:res} => {",
+			"\tif (${2:res}) {",
+			"\t\t${3:property} = ${2:res};",
+			"\t}",
+			"});",
+			"this.subscriptions.push(${4:type}Sub);"
+		]
+	},
+	"sdi": {
+		"prefix": "sdi",
+		"body": [
+			"this.store.dispatch(new ${1:action}(${2:payload}));"
+		]
+	},
+	"action": {
+		"prefix": "action",
+		"body": [
+			"export class ${1:Class}Action implements Action {",
+			"\tpublic type: string = ${2:Type}ActionTypes.AUTHENTICATE;",
+			"\tconstructor(public payload: any) { }",
+			"}"
+		]
+	},
+	"effect": {
+		"prefix": "effect",
+		"body": [
+			"@Effect()",
+			"public loadRequestData$: Observable<Action> = this.update$",
+			"\t.ofType(OnboardingActionTypes.LOAD_REQUEST_DATA)",
+			"\t.map(toPayload)",
+			"\t.switchMap(payload => {",
+			"\t\treturn this.${1:name}Provider.getRequestData(payload)",
+			"\t\t.map(data => new ${2:action}ActionSuccess(data))",
+			"\t\t.catch(error => Observable.of(new ${2:action}ActionFailure({ error: error })))",
+			"\t});"
+		]
+	},
+	"istar": {
+		"prefix": "istar",
+		"body": [
+			"import * as ${2:module} from '${1:file}';"
+		]
+	},
+	"cobs": {
+		"prefix": "cobs",
+		"body": "return Observable.create((observer) => {observer.next(); observer.complete()}"
+	},
+
+	"Null check": {
+		"prefix": "ifnull",
+		"body": [
+			"if (${1:variable}) {",
+			"\t$2",
+			"}"
+		]
+	},
+	"array size check": {
+		"prefix": "ifarray",
+		"body": [
+			"if (${1:variable} && ${1:variable}.length > 0) {",
+			"\t$2",
+			"}"
+		]
+	}
+}
