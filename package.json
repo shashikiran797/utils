@@ -1,0 +1,16 @@
+{
+    "name": "sk-utils",
+    "version": "1.0.0",
+    "description": "This is the main VoterCircle backend server which is also a GraphQL server implementation.",
+    "author": "Shashi Kiran M S",
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "@std/esm": {
+        "esm": "all",
+        "cjs": true
+    },
+    "dependencies": {
+        "esprima": "^4.0.0",
+        "graceful-fs": "^4.1.11",
+        "parse-js": "^0.5.1"
+    }
+}
