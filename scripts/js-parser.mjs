@@ -38,7 +38,7 @@ async function parseTypescriptFile(file) {
 async function writeSvg(){
     _.each(Temp.temp, (svg) => {
         console.log(svg.selector);
-        fs.writeFileSync(`/Users/shashikiranms/personal/utils/${svg.selector}`, svg.template)
+        fs.writeFileSync(`/Users/shashikiranms/personal/utils/${svg.selector}.svg`, svg.template)
     })
     
 }
