@@ -9,10 +9,13 @@
         "cjs": true
     },
     "dependencies": {
+        "@types/node": "^9.6.6",
+        "babylon": "^7.0.0-beta.47",
         "escodegen": "^1.9.0",
         "esprima": "^4.0.0",
         "lodash": "^4.17.5",
         "parse-js": "^0.5.1",
+        "recast": "^0.18.2",
         "typescript-parser": "^2.4.0"
     }
 }
